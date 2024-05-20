@@ -1,0 +1,72 @@
+;; this is a comment! (you can use comment only out of the .data, main or .loop)
+;; you can use 'import file' to import a file, but don't use the extension, use only the file name
+;; you can use 'include file' to include an file has a lib, but you need to have the libs directory (windows: C:/tastinclude/) (linux: /usr/local/bin/tastinclude/)
+;; you can create a window using 'createwindow' but dont work in .data
+;; you can define the window height creating a height variable and a number has it value
+;; you can define the window width creating a width variable and a number has it value
+;; you can define the window title creating a title variable and a string as it value
+;; you can make the window create a loop to it dont self destroy using 'windowloop'
+;; you can use 'append varfilename varname' to append the var content into a file
+;; you can use 'read varfilename outputvarname' to read an file and
+;; you can use 'write varfilename varname' to write the var contento into a file
+;; varfilename is an variable with the name of the file as it value
+
+.data
+    set n1 10
+    set v1 " hello world!
+    set n2 10
+    func test
+    addfcode test > push prv v1
+    addfcode test > push nl
+    addfcode test > push pr AAAAA
+    addfcode test > push nl
+    func a
+    addfcode a > push prv n1
+    addfcode a > push nl
+    func correct
+    addfcode correct > push pr Correct!
+    addfcode correct > push nl
+    addfcode correct > stop
+    func incorrect
+    addfcode incorrect > push pr Incorrect, try again!
+    addfcode incorrect > push nl
+    pyfunc test2
+    addpfcode test2 > print(variables.get("v1"))
+    addpfcode test2 > print("im working!")
+    set incnum 5
+    set systvcmd " echo "hello from tast and main.tasm!"
+
+main
+    call test
+    push pr say some message >
+    push spc
+    strinput msg
+    push prv msg
+    push nl
+    compa a n1 n2
+    syst echo AAAAAA
+    callpy test2
+    inc n1 incnum
+    push prv n1
+    push nl
+    dec n1 incnum
+    push prv n1
+    push nl
+    systv systvcmd
+
+.data
+    set str1 " hello,
+    set str2 " World!
+
+main
+    join str1 str2 hello
+    push prv hello
+    push nl
+
+.loop
+    rand 1 10 num
+    push pr say a number of 1 to 10 >
+    push spc
+    intinput chnum
+    compa correct num chnum
+    notcompa incorrect num chnum
