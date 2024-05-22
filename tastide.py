@@ -39,6 +39,7 @@ class IcaTextEditor:
             "inc": "green",
             "notcompa": "red",
             "compa": "red",
+            "stop": "red",
             ">": "green",
             "callpy": "green",
             "call": "blue",
