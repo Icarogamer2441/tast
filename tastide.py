@@ -23,7 +23,7 @@ class IcaTextEditor:
                 self.highlight_keywords()
 
     def save_file(self, event=None):
-        file_path = filedialog.asksaveasfilename(defaultextension=".izam", filetypes=[("Izam files", "*.izam"), ("All files", "*.*")])
+        file_path = filedialog.asksaveasfilename(defaultextension=".tasm", filetypes=[("Tast files", "*.tasm"), ("All files", "*.*")])
         if file_path:
             with open(file_path, 'w') as file:
                 file.write(self.text_area.get('1.0', tk.END))
