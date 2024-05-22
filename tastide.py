@@ -15,7 +15,7 @@ class IcaTextEditor:
         self.text_area.bind('<KeyRelease>', self.highlight_keywords)
 
     def open_file(self, event=None):
-        file_path = filedialog.askopenfilename(filetypes=[("Izam files", "*.izam"), ("All files", "*.*")])
+        file_path = filedialog.askopenfilename(filetypes=[("Tast files", "*.tasm"), ("All files", "*.*")])
         if file_path:
             with open(file_path, 'r') as file:
                 self.text_area.delete('1.0', tk.END)
